@@ -16,9 +16,9 @@ class IdeaController extends Controller
 
         $idea = Idea::create(
             [
-                'content' => request()->get('idea',''),
+                'content' => request()->get('idea', ''),
             ]
         );
-        return redirect()->route('dashboard')->with('success','Idea was created successfully');
+        return redirect()->route('dashboard')->with('success', 'Idea was created successfully');
     }
 }

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title> {{config('app.name') }} </title>
+    <title> {{ config('app.name') }} </title>
 
     <link href="https://bootswatch.com/5/sketchy/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 
@@ -79,15 +79,15 @@
                 @include('shared.success-message')
                 @include('shared.submit-idea')
                 <hr>
-                @foreach($ideas as $idea)
+                @foreach ($ideas as $idea)
                     <div class="mt-3">
                         @include('shared.idea-card')
                     </div>
                 @endforeach
                 <div class="mt-3">
-                    {{ $ideas -> links() }}
+                    {{ $ideas->links() }}
                 </div>
-            </div>            
+            </div>
             <div class="col-3">
                 <div class="card">
                     <div class="card-header pb-0 border-0">
@@ -120,7 +120,8 @@
                         <div class="hstack gap-2 mb-3">
                             <div class="avatar">
                                 <a href="#!"><img class="avatar-img rounded-circle"
-                                        src="https://api.dicebear.com/6.x/fun-emoji/svg?seed=Mario" alt=""></a>
+                                        src="https://api.dicebear.com/6.x/fun-emoji/svg?seed=Mario"
+                                        alt=""></a>
                             </div>
                             <div class="overflow-hidden">
                                 <a class="h6 mb-0" href="#!">Mario Brother</a>
