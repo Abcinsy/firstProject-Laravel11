@@ -11,4 +11,5 @@
         <div class="">
             <button type="submit" class="btn btn-dark"> Share </button>
         </div>
+    </form>
 </div>
