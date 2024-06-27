@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 class IdeaController extends Controller
 {
     public function show(Idea $idea){
-        return view('ideas.show',[
-            'idea' => $idea
-        ]);
+
+        return view('ideas.show', compact('idea'));
+        
     }
 
     public function store(){
