@@ -1,12 +1,17 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\IdeaController;
 use App\Http\Controllers\CommentController;
 use Illuminate\Support\Facades\Route;
 
-
+// Dashboard
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+
+// Navigation
+Route::get('/register', [AuthController::class, 'register'])->name('register');
+Route::post('/register', [AuthController::class, 'store']);
 
 // Ideas
 Route::post('/ideas', [IdeaController::class, 'store'])->name('ideas.store');
