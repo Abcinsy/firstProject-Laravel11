@@ -1,4 +1,6 @@
-@extends('layout.layout')
+@extends('layout.app')
+
+@section('title', 'Dashboard')
 
 @section('content')
     <div class="row">
@@ -7,15 +9,19 @@
         </div>
         <div class="col-6">
             @include('shared.success-message')
-            @include('shared.submit-idea')
+            @include('ideas.shared.submit-idea')
             <hr>
-            @foreach ($ideas as $idea)
+
+            @forelse ($ideas as $idea)
                 <div class="mt-3">
-                    @include('shared.idea-card')
+                    @include('ideas.shared.idea-card')
                 </div>
-            @endforeach
+            @empty
+                <p class="text-center mt-4">No Results Found.</p>
+            @endforelse
+
             <div class="mt-3">
-                {{ $ideas->links() }}
+                {{ $ideas->withQueryString()->links() }}
             </div>
         </div>
         <div class="col-3">
